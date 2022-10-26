@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from "../../../core/models/user/user.model";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from "../../../core/models/custom-validator/custom-validator";
+import { AuthService } from "../../../core/services/auth-service/auth.service";
 
 @Component({
   selector: 'app-registration',
@@ -20,13 +21,14 @@ export class RegistrationComponent {
     { validators: CustomValidators.passwordsMatching }
   );
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   registerUser(): void {
     if (!this.registerForm.valid) {
       return;
     }
     const user = this.registerForm.getRawValue() as User;
+    this.authService.register(user);
   }
 
 }
