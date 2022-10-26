@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { PublicRoutingModule } from "./public-routing.module";
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PublicRoutingModule
   ]
 })
 export class PublicModule { }
