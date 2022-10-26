@@ -65,4 +65,10 @@ export class AuthService {
     return JSON.parse(rawUser);
   }
 
+  logout(): void {
+    localStorage.removeItem(currentUserLocalStorageName);
+    this.currentUser = null
+    this.router.navigate(['../../']);
+  }
+
 }
