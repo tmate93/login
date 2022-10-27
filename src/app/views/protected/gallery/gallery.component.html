@@ -1,1 +1,14 @@
-<p>gallery works!</p>
+<div class="row page-title">
+  <h1>File list</h1>
+</div>
+<div class="row">
+  <div class="col-md-6 files">
+    <app-gallery-item
+      *ngFor="let file of testFiles"
+      [file]="file"
+    ></app-gallery-item>
+  </div>
+</div>
+<div class="row page-switch-link">
+  <a [routerLink]="['../file-upload']">Go to File upload</a>
+</div>
