@@ -4,6 +4,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ProtectedRoutingModule } from "./protected-routing.module";
 import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.component';
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.compon
   ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    SharedModule
   ]
 })
 export class ProtectedModule { }

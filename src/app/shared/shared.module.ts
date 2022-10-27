@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FileSizePipe } from './pipes/filesize.pipe';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FileSizePipe
+  ],
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [
+    FileSizePipe
+  ]
 })
 export class SharedModule { }
