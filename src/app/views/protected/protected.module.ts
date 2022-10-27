@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ProtectedRoutingModule } from "./protected-routing.module";
+import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.component';
 
 @NgModule({
   declarations: [
     GalleryComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    GalleryItemComponent
   ],
   imports: [
     CommonModule,
