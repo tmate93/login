@@ -6,7 +6,7 @@
     <p>{{ file.fileSize | filesize }}</p>
   </div>
   <div class="col-2 upload-date">
-    <p>{{ file.uploadDate }}</p>
+    <p>{{ file.uploadDate | date : 'yyyy.MM.dd' }}</p>
   </div>
   <div class="col-1 file-button">
     <button (click)="saveFile()">💾</button>
