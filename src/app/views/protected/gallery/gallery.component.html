@@ -3,8 +3,13 @@
 </div>
 <div class="row">
   <div class="col-md-6 files">
+    <div class="gallery-sort-buttons">
+      <button class="gallery-sort-button" (click)="sortFiles('fileName')">Name</button>
+      <button class="gallery-sort-button" (click)="sortFiles('fileSize')">Size</button>
+      <button class="gallery-sort-button" (click)="sortFiles('uploadDate')">Date</button>
+    </div>
     <app-gallery-item
-      *ngFor="let file of testFiles"
+      *ngFor="let file of testFiles | FileSortPipe : orderBy : ascending"
       [file]="file"
     ></app-gallery-item>
   </div>

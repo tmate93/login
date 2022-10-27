@@ -17,6 +17,11 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
     text-align: center;
+
+    .gallery-sort-buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   &.page-switch-link {

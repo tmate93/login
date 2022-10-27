@@ -9,6 +9,8 @@ import { FileData } from "../../../core/models/file/file.model";
 export class GalleryComponent {
 
   testFiles: FileData[];
+  orderBy: keyof FileData;
+  ascending: boolean;
 
   constructor() {
     this.testFiles = [
@@ -31,6 +33,18 @@ export class GalleryComponent {
         uploadDate: new Date()
       }
     ];
+
+    this.orderBy = "uploadDate";
+    this.ascending = true;
+  }
+
+  public sortFiles(order: keyof FileData): void {
+    if (this.orderBy !== order) {
+      this.orderBy = order;
+      this.ascending = true;
+    } else {
+      this.ascending = !this.ascending;
+    }
   }
 }
 
