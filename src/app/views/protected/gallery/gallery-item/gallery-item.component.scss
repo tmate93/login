@@ -1,0 +1,26 @@
+.row {
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  .file-size {
+    text-align: center;
+  }
+
+  .upload-date {
+    text-align: center;
+  }
+
+  .file-button {
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+:host:not(:last-child) .row {
+  border-bottom: 1px gray solid;
+}
