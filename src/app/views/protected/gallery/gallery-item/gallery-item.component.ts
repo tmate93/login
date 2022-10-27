@@ -12,8 +12,14 @@ export class GalleryItemComponent {
 
   constructor() { }
 
-  saveFile() {
+  public saveFile() {
+    let downloadLink = document.createElement("a");
+    downloadLink.href = this.file.fileData;
+    downloadLink.download = this.file.fileName;
 
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
   }
 
   deleteFile() {
