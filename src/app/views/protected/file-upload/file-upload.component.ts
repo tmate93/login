@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.scss']
 })
-export class FileUploadComponent implements OnInit {
+export class FileUploadComponent {
 
-  constructor() { }
+  @ViewChild('fileInput', {static: true}) fileInput!: ElementRef<HTMLInputElement>;
 
-  ngOnInit(): void {
+  uploadForm: FormGroup;
+
+  constructor() {
+    this.uploadForm = new FormGroup({
+      file: new FormControl(null, [Validators.required]),
+    });
+  }
+
+  submit() {
   }
 
 }

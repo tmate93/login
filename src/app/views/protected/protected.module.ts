@@ -5,6 +5,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ProtectedRoutingModule } from "./protected-routing.module";
 import { GalleryItemComponent } from './gallery/gallery-item/gallery-item.component';
 import { SharedModule } from "../../shared/shared.module";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { SharedModule } from "../../shared/shared.module";
   imports: [
     CommonModule,
     ProtectedRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProtectedModule { }
