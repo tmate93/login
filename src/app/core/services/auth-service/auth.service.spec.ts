@@ -35,4 +35,10 @@ describe('AuthServiceService', () => {
     let users = JSON.parse(<string>localStorage.getItem('users'));
     expect(users.find((user: any) => mockUser.email === user.email && mockUser.password === user.password)).toBeTruthy();
   });
+
+  it('should log in', () => {
+    service.register(mockUser);
+    service.login(mockUser.email, mockUser.password);
+    expect(service.currentUser).toEqual(mockUser);
+  });
 });
