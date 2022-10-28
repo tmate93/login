@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FileService } from "../../../core/services/file-service/file.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-file-upload',
@@ -12,13 +14,23 @@ export class FileUploadComponent {
 
   uploadForm: FormGroup;
 
-  constructor() {
+  constructor(private router: Router, private fileService: FileService) {
     this.uploadForm = new FormGroup({
       file: new FormControl(null, [Validators.required]),
     });
   }
 
   submit() {
+    const input = this.fileInput.nativeElement;
+    if (!input.files || input.files.length === 0) {
+      return;
+    }
+    const fileData = input.files[0];
+    if (!fileData) {
+      return;
+    }
+    this.fileService.storeFile(fileData);
+    this.router.navigate(['../../protected/gallery']);
   }
 
 }
