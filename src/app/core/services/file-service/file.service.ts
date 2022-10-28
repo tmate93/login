@@ -52,6 +52,19 @@ export class FileService {
   private setFilesToStorage(files: FileData[]): void {
     localStorage.setItem(localStorageName, JSON.stringify(files));
   }
+
+  deleteFile(file: FileData): void {
+    this.deleteFileFromStorage(file)
+  }
+
+  private deleteFileFromStorage(fileToDelete: FileData): void{
+    const fileIndex = this.files.findIndex(file => file === fileToDelete);
+    if (fileIndex < 0) {
+      return;
+    }
+    this.files.splice(fileIndex,1);
+    this.setFilesToStorage(this.files);
+  }
 }
 
 function parseObject<T>(key: string, value: T): T | Date {
