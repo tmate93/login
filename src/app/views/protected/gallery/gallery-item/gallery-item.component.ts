@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FileData } from "../../../../core/models/file/file.model";
+import { FileService } from "../../../../core/services/file-service/file.service";
 
 @Component({
   selector: 'app-gallery-item',
@@ -10,7 +11,7 @@ export class GalleryItemComponent {
 
   @Input() file!: FileData;
 
-  constructor() { }
+  constructor(private fileService: FileService) { }
 
   public saveFile() {
     let downloadLink = document.createElement("a");
@@ -23,6 +24,6 @@ export class GalleryItemComponent {
   }
 
   deleteFile() {
-
+    this.fileService.deleteFile(this.file);
   }
 }
